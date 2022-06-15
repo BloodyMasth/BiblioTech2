@@ -1,0 +1,26 @@
+{% extends 'starterbase.html' %}
+
+{% block content %}
+<ul>
+    <div class="row">
+        {% for livre in livres %}
+        <div class="column">
+            <div class="card" style="width: 15rem;">
+                <img src="{{livre.image_url}}" class="card-img-top" alt="Image du livre">
+                <div class="card-body">
+                    <h5 class="card-title">{{livre.titre}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{livre.auteur}}</li>
+                    <li class="list-group-item">Tome {{livre.tome}}</li>
+                    <li class="list-group-item">Serie : {{livre.serie}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Plus d'info...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</ul>
+{% endblock %}
